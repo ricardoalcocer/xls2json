@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var xml2tss = require("../xls2json");
+var path 	= require('path');
+
+if (process.argv.length === 4) {
+  xml2tss.convertFile(process.argv.slice(2)[0],process.argv.slice(3)[0]);
+} else {
+  console.log("USAGE: xls2json [xls_file] [output_folder]");
+}
