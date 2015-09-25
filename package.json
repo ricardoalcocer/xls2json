@@ -1,6 +1,6 @@
 {
   "name": "xls2json",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Convert XLS Workskeets to individual JSON files, formatted as Arrays of Objects",
   "main": "xls2json.js",
   "scripts": {
