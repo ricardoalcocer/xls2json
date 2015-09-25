@@ -1,6 +1,5 @@
-exports.convertFile = function(infile,outpath){
+exports.convertFile = function(infile,outpath,callback){
 	var XLS 		= require('xlsjs');
-	var path 		= require('path');
 	var fs 			= require('fs');
 	
 	if (typeof infile != 'undefined' && typeof outpath != 'undefined'){
@@ -18,11 +17,11 @@ exports.convertFile = function(infile,outpath){
 				fs.writeFileSync(outpath + '/' + item + '.json',json,'utf-8');
 			})
 
-			console.log('Done.  Output written to ' + outpath);
+			callback(null, 'Done.  Output written to ' + outpath);
 		}catch(e){
-			console.log(e);
+			callback(e, 'Error');
 		}
 	}else{
-		console.log('Error: Missing arguments');
+		console.log("USAGE: xls2json [xls_file] [output_folder]");
 	}
 }

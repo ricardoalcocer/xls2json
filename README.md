@@ -8,11 +8,26 @@ Node app that takes an Excel spreadsheet and convertes each worksheet into an in
 sudo npm install -g xls2json
 ```
 
-## Usage
+## CLI Usage
 
 ```
 xls2json my_excel_sheet.xls /output/
 ```
+
+## Library Usage
+
+```
+var xls2json = require('xls2json');
+
+xls2json.convertFile(infile,outpath,function(err,data){
+	if (err){
+		// there was an error
+	}else{
+		// it's all good
+	}
+});
+```
+
 
 ## License
 
